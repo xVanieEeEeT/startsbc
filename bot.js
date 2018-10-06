@@ -4,7 +4,7 @@ const prefix = 'U';
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
-  client.user.setActivity("United. || Links", 'https://twitch.tv//9ivv')
+  client.user.setActivity("United. || Broadcast", 'https://twitch.tv//9ivv')
     console.log('')
     console.log('')
     console.log('╔[════════════════════════════════════════════════════════════════]╗')
