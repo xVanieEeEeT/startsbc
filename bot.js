@@ -74,8 +74,8 @@ client.on('ready', () => {
  });
 
 client.on('message', message => {
-    if(!message.member.hasPermissions('ADMINISTRATOR')) return;
     if(message.content.startsWith(prefix + 'bc')) {
+      if(!message.member.hasPermissions('ADMINISTRATOR')) return;
     let args = message.content.split(' ').slice(1).join(' ');
     message.channel.send(`**:ballot_box_with_check: Sent.**`).then(m => m.delete(5000));
     message.guild.members.forEach(m => {
