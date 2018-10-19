@@ -77,19 +77,19 @@ client.on('ready', () => {
 
  });
 
-client.on('message', message => {
+client.on("message", message => {
     if(message.content.startsWith(prefix + 'bc')) {
-      if(!message.member.hasPermissions('ADMINISTRATOR')) return;
-    let args = message.content.split(' ').slice(1).join(' ');
-    message.channel.send(`**:ballot_box_with_check: Sent.**`).then(m => m.delete(5000));
-    message.guild.members.forEach(m => {
-    m.send(`${args}\n${m}`);
-    if(message.attachments.first()){
-   m.sendFile(message.attachments.first().url).catch();
-    }
-    message.delete();
-    })
+        if(!message.member.hasPermission("ADMINISTRATOR")) return;
+                if(!message.channel.guild) return;
+                    let args = message.content.split(" ").slice(1).join(" ");
+                    message.delete()
+                        message.channel.send(`**Sent for ${message.guild.memberCount} members.**`);
+            message.guild.members.forEach((united) => {
+                united.send(args + `\n${united}`);
+
+            });
     }
 });
+
 
 client.login(process.env.BOT_TOKEN);
